@@ -1,5 +1,3 @@
-#! /usr/bin/python3
-# -*- coding: utf-8 -*-
 from flask import Flask, jsonify, make_response, abort
 import pymysql, pymysql.cursors
 app = Flask(__name__)
