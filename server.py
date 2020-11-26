@@ -29,9 +29,9 @@ def get_all():
 def get_on_id(id):
   return make_response(get_data("SELECT subject, content, date FROM test WHERE id =" + str(id)))
 
-@app.route("/subject")
-def get_subject():
-  return make_response(get_data("SELECT subject FROM test"))
+@app.route("/search/<string:word>")
+def get_search(word):
+  return make_response(get_data("SELECT subject, content, date FROM test WHERE subject LIKE '%" + word + "%'"))
 
 @app.errorhandler(404)
 def error404(error):
